@@ -5,14 +5,17 @@
   <version>0.0.1-SNAPSHOT</version>
   
   <dependencies>
-		<dependency>
+ 		<dependency>
+ 	<!-- 내가 필요한 모듈들은, dependencies태그의 dependency 안에 들어간다 -->
     		<groupId>org.springframework</groupId>
     		<artifactId>spring-context</artifactId>
     		<version>5.3.8</version>
 		</dependency>
   </dependencies>
   
+  
   <build>
+  <!-- build태그 내부엔, 내가 만든 모듈을 빌드할때 필요한 build명령들이 들어간다. -->
   	<plugins>
   		<plugin>
   			<artifactId>maven-compiler-plug</artifactId>
