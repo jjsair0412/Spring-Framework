@@ -12,6 +12,22 @@
 	<!-- 해당 태그를 이용해서 bean을 생성한다. beanid는 이름을 적어주고, class에는 "페키지명.클래스명" 이렇게 작성한다.  -->
 	<bean id = "tWalk" class= "firstPjt.TranspotationWalk" />
 	
+	<bean id = "goodbat" class = "Di_study_Spring.goodBat"/>
+	<bean id = "badbat" class = "Di_study_Spring.BadBat"/>
+	
+	<!-- 스프링에선, 객체 주입을 위해 bean태그 하위태그인 constructor-arg 태그를 사용한다.
+	ref = "주입할 객체 bean id" 이렇게 작성한다. -->
+	<bean id = "ElctToy" class = "Di_study_Spring.ElctToy"/>
+	
+	<bean id = "ElcCarToy" class = "Di_study_Spring.ElcCarToy">
+		<constructor-arg ref="goodbat"> </constructor-arg>
+	</bean>
+	
+	<bean id = "ElcAirToy" class = "Di_study_Spring.ElcAirToy">
+		<constructor-arg ref="goodbat"> </constructor-arg>
+	</bean>
+	
+	
 </beans>
 	
 	
