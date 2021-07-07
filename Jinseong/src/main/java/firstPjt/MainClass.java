@@ -11,7 +11,7 @@ public class MainClass {
 		
 		// --- spring과 java의 차이점 ---
 		// 일반 자바프로젝트는 순수 자바언어로만 가지고 프로젝트를 만든다
-		// spring은, spring에 수많은 모듈들을 pron.xml파일을 이용해 모듈을 가져오고
+		// spring은, spring에 수많은 모듈들을 pom.xml파일을 이용해 모듈을 가져오고
 		// 가져온 모듈들을 사용해 개발한다.
 		
 		// src\main\rescources의 xml에서는, 
