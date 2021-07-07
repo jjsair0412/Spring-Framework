@@ -1,9 +1,12 @@
 package firstPjt;
 
+import org.springframework.context.support.GenericApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
 public class MainClass {
 	public static void main(String[] args) {
-		TranspotationWalk trna = new TranspotationWalk();
-		trna.move();
+//		TranspotationWalk trna = new TranspotationWalk();
+//		trna.move();
 		// 여기까진 스프링과 관계가 없다.
 		// 기존 자바형식과 같게 레퍼런스를 생성하고 객체의 메서드를 호출한다.
 		
@@ -15,6 +18,18 @@ public class MainClass {
 		// src\main\rescources의 xml에서는, 
 		// ioc 컨테이너 안에있는 bean(객체)를 관리한다.
 		
+		// GenericXmlApplicationContext 데이터타입이 컨테이너에 접근하기위한 데이터타입이다.
+		// 파라미터값으로 자원 이름을 적어준다
+		// classpath:"xml파일명"
+		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:Application_context.xml");
 		
+		// 컨테이너안에있는 bean을 가져오는 메서드
+		// 파라미터값으로 아까 지정해주었던 id값, 클래스명을 작성
+		// id값은 tWalk, 데이터타입은 TranspotationWalk.class
+		TranspotationWalk transpotationWalk = ctx.getBean("tWalk",TranspotationWalk.class);
+		transpotationWalk.move();
+		
+		// 반환한다.
+		ctx.close();
 	}
 }

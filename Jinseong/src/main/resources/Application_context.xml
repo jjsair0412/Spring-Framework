@@ -1,1 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- src\main\resources안에있는 xml에서 bean을 만들어준다. ioc의 컨테이너에서 bean을 관리하고
+	사용자가 bean을 꺼내다 쓰는데, 여기서 bean을 만들어준다. 그니까 일반 자바에서는 new 키워드로
+	레퍼런스를 생성해서 사용했엇는데 spring에서는 bean을 만들어두고 필요할때마다 꺼내다 쓴다. -->
+	
+	<!-- 해당 태그를 이용해서 bean을 생성한다. beanid는 이름을 적어주고, class에는 "페키지명.클래스명" 이렇게 작성한다.  -->
+	<bean id = "tWalk" class= "firstPjt.TranspotationWalk" />
+	
+</beans>
+	
+	
