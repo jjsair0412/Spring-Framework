@@ -5,7 +5,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
-	<!-- src\main\resources안에있는 xml에서 bean을 만들어준다. ioc의 컨테이너에서 bean을 관리하고
+	<!-- src\main\resources 폴더 안에있는 xml에서 bean을 만들어준다. ioc의 컨테이너에서 bean을 관리하고
 	사용자가 bean을 꺼내다 쓰는데, 여기서 bean을 만들어준다. 그니까 일반 자바에서는 new 키워드로
 	레퍼런스를 생성해서 사용했엇는데 spring에서는 bean을 만들어두고 필요할때마다 꺼내다 쓴다. -->
 	
