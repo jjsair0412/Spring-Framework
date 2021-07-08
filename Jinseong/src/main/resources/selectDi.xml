@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd">
+		
+		<context:annotation-config />
+		
+		<bean id = "Men" class = "Select_Di_Study.Men"/>
+		<!-- 동일한 bean이 여러개가 있다면 스프링 컨테이너는 
+		자동주입대상객체를 판단하지 못해서 Exception을 발생시킨다 -->
+		<bean id = "Pencil1" class = "Select_Di_Study.Pencil">
+		<!-- 따라서 qualifier 태그를 사용한다. value로 이름을 지정해준후 -->
+			<qualifier value ="usethisPencil"/>
+		</bean>
+		<bean id = "Pencil2" class = "Select_Di_Study.Pencil"/>
+		<bean id = "Pencil3" class = "Select_Di_Study.Pencil"/>
+		
+		
+</beans>
