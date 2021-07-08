@@ -4,6 +4,8 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class MainClass {
 	public static void main(String[] args) {
+		
+		// 이렇게 스프링 설정파일을 가져오면, 스프링 컨테이너가 만들어진다.
 		GenericXmlApplicationContext gen = new GenericXmlApplicationContext("classpath:SimpleExContext.xml");
 		AirToy airtoy = gen.getBean("airToy",AirToy.class);
 		airtoy.useAirMens();
