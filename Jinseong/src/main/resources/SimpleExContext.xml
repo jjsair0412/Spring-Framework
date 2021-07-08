@@ -51,7 +51,7 @@
 		</bean>
 		
 		
-		<bean id = "personToy" class ="DI_study_Spring_Simple.PersonToy">
+		<bean id = "personToy" class ="DI_study_Spring_Simple.PersonToy" scope="prototype">
 			<constructor-arg ref = "battery"></constructor-arg>
 			<!-- property에서 객체를 주입시켜줄때는, ref를 사용한다!!!!!!!!!
 			그냥 String값이나 int값을 주입시키기 위해선 value를 사용한다 -->
