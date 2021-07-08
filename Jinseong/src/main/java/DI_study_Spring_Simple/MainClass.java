@@ -21,7 +21,7 @@ public class MainClass {
 		}
 	
 		if(javaToy == javaToy2) {
-			System.out.println("둘은 같은 객체를 가르키고있다.");
+			System.out.println("둘은 같은 객체를 가르키고있다..");
 		}else {
 			System.out.println("자바는 아니다.");
 		}
