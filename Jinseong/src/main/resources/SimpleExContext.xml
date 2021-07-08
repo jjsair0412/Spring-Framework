@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+		<!-- src\main\resources 폴더 안에있는 xml에서 bean을 만들어준다. ioc의 컨테이너에서 
+        bean을 관리하고 사용자가 bean을 꺼내다 쓰는데, 여기서 bean을 만들어준다. 
+    	그니까 일반 자바에서는 new 키워드로 레퍼런스를 생성해서 사용했엇는데 
+   		 spring에서는 bean을 만들어두고 필요할때마다 꺼내다 쓴다. -->
+
+		
+		<bean id = "battery" class ="DI_study_Spring_Simple.Battery"/>
+		<!-- 해당 태그를 이용해서 bean을 생성한다. 
+ 		beanid는 이름을 적어주고, class에는 "페키지명.클래스명" 이렇게 작성한다.  -->
+		
+		
+		<bean id = "airToy" class ="DI_study_Spring_Simple.AirToy">
+		
+			<!-- 스프링에서 Setter 메서드에 파라미터값으로 객체를 주입하려 할때,
+			property 태그를 사용한다.
+			또한 name에는 메서드 이름을 작성해주는데, 
+			만약 메서드 이름이 setBattery라면
+			set은 생략하고 맨앞글자를 소문자로 작성한다. 
+			setBattery -> battery로 작성한다.-->
+		
+			<!-- 생성자에 객체를 주입하기 위한 방법은 constructor 태그의 ref를 사용한다. 
+			생성자에 객체가아닌 값을 주입하기 위해선 ref대신 value를 사용한다. -->
+			<constructor-arg ref = "battery"></constructor-arg>
+			
+			<!-- set메서드의 파라미터값으로 map이 들어가야하는 경우, 밑에처럼작성한다. -->
+			<property name="useAirToy">
+				<map>
+					<!-- 각각의 entry가 '키-값'을 의미한다 . 첫번째 '키-값'-->
+					<entry>
+						<key>
+							<value>1번 하늘장난감 사용자</value>
+						</key>
+							<value>주진성</value>
+					</entry>
+					<!-- 각각의 entry가 '키-값'을 의미한다 . 두번째 '키-값'-->
+					<entry>
+						<key>
+							<value>2번 하늘장난감 사용자</value>
+						</key>
+							<value>홍길동</value>
+					</entry>
+				</map>
+			</property>
+		</bean>
+		
+		
+		<bean id = "personToy" class ="DI_study_Spring_Simple.PersonToy">
+			<constructor-arg ref = "battery"></constructor-arg>
+			<!-- property에서 객체를 주입시켜줄때는, ref를 사용한다!!!!!!!!!
+			그냥 String값이나 int값을 주입시키기 위해선 value를 사용한다 -->
+			<property name="battery" ref = "battery"></property>
+			
+			<!-- String값을 파라미터로받는 set메서드를 사용하기 위한 property -->
+			<property name="batteryResult" value ="완충했어요" />
+			
+			<!-- ArrayList를 파라미터값으로 받는 경우, 밑에처럼 작성한다. -->
+			<property name="useperson">
+				<!-- list태그 하단에 value로 각 값을 적어준다. -->
+				<list>
+					<value>주진성</value>
+					<value>홍길동</value>
+					<value>김00</value>
+				</list>
+			</property>		
+		</bean>
+		
+</beans>
